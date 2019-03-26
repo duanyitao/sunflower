@@ -31,12 +31,12 @@ object InjectorUtils {
 
     private fun getPlantRepository(context: Context): PlantRepository {
         return PlantRepository.getInstance(
-                AppDatabase.getInstance(context.applicationContext).plantDao())
+                AppDatabase.getInstance(context.applicationContext).plantDao)
     }
 
     private fun getGardenPlantingRepository(context: Context): GardenPlantingRepository {
         return GardenPlantingRepository.getInstance(
-                AppDatabase.getInstance(context.applicationContext).gardenPlantingDao())
+                AppDatabase.getInstance(context.applicationContext).gardenPlantingDao)
     }
 
     fun provideGardenPlantingListViewModelFactory(

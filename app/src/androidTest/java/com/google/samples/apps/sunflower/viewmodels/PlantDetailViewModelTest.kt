@@ -43,9 +43,9 @@ class PlantDetailViewModelTest {
         val context = InstrumentationRegistry.getTargetContext()
         appDatabase = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
 
-        val plantRepo = PlantRepository.getInstance(appDatabase.plantDao())
+        val plantRepo = PlantRepository.getInstance(appDatabase.plantDao)
         val gardenPlantingRepo = GardenPlantingRepository.getInstance(
-                appDatabase.gardenPlantingDao())
+                appDatabase.gardenPlantingDao)
         viewModel = PlantDetailViewModel(plantRepo, gardenPlantingRepo, testPlant.plantId)
     }
 

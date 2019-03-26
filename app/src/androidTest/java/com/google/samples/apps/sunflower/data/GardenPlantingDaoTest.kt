@@ -43,9 +43,9 @@ class GardenPlantingDaoTest {
     @Before fun createDb() {
         val context = InstrumentationRegistry.getTargetContext()
         database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
-        gardenPlantingDao = database.gardenPlantingDao()
+        gardenPlantingDao = database.gardenPlantingDao
 
-        database.plantDao().insertAll(testPlants)
+        database.plantDao.insertAll(testPlants)
         testGardenPlantingId = gardenPlantingDao.insertGardenPlanting(testGardenPlanting)
     }
 

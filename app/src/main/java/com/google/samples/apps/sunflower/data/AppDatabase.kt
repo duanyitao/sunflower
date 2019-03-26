@@ -33,8 +33,8 @@ import com.google.samples.apps.sunflower.workers.SeedDatabaseWorker
 @Database(entities = [GardenPlanting::class, Plant::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun gardenPlantingDao(): GardenPlantingDao
-    abstract fun plantDao(): PlantDao
+    abstract val gardenPlantingDao: GardenPlantingDao
+    abstract val plantDao: PlantDao
 
     companion object {
 
